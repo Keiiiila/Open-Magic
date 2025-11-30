@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <header>
+        <div class="header-container">
+
+
+            <img src="imagen/open magic.jpeg" alt="open magic events">
+
+
+            <!-- Botón del menú -->
+            <div class="menu-btn" id="menu-btn">☰</div>
+
+
+            <!-- Menú de navegación -->
+            <nav id="nav">
+                <a href="#Inicio">Inicio</a>
+                <a href="#sobre-nosotros">Sobre Nosotros</a>
+                <a href="#equipo">Nuestro Equipo</a>
+                <a href="#eventos">Eventos</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+
+
+        </div>
+    </header>
+
+
+    <!-- Script para el menú -->
+    <script>
+        const menuBtn = document.getElementById("menu-btn");
+        const nav = document.getElementById("nav");
+
+
+        menuBtn.addEventListener("click", () => {
+            nav.classList.toggle("active");
+        });
+    </script>
+
+
+    <section class="banner" id="Inicio">
+        <img src="imagen/boda.png" alt="Banner de Open Magic Events">
+        <h1>Open Magic Events</h1>
+    </section>
+
+
+    <section class="sobre-nosotros" id="sobre-nosotros">
+        <h2>Sobre Nosotros</h2>
+        <p>
+            En Open Magic Events nos dedicamos a crear experiencias únicas
+            y memorables. Nuestro equipo trabaja con pasión, creatividad y profesionalismo
+            para que cada evento sea verdaderamente mágico.
+        </p>
+    </section>
+
+
+    <section class="nuestro-equipo" id="equipo">
+    <h2>Nuestro Equipo</h2>
+    <div class="equipo-container">
+        <div class="miembro">
+            <img src="imagen/Keila González.jpeg" alt="Keila González">
+            <h3>Keila González</h3>
+            <p>Coordinadora de Eventos</p>
+        </div>
+        <div class="miembro">
+            <img src="imagen/karla.jpeg" alt="Karla Murillo">
+            <h3>Karla Murillo</h3>
+            <p>Diseño y Creatividad</p>
+        </div>
+        <div class="miembro">
+            <img src="imagen/krissia.jpeg" alt="Krissia Revelo">
+            <h3>Krissia Revelo</h3>
+            <p>Logística</p>
+        </div>
+        <div class="miembro">
+            <img src="imagen/jose.jpeg" alt="Jose Hernández">
+            <h3>Jose Hernández</h3>
+            <p>Producción</p>
+        </div>
+        <div class="miembro">
+            <img src="imagen/denia.jpeg" alt="Denia Reyes">
+            <h3>Denia Reyes</h3>
+            <p>Marketing y Comunicación</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- Eventos -->
+    <section class="eventos" id="eventos">
+        <h2>Eventos</h2>
+        <div class="eventos-container">
+            <!-- Quinceañeras -->
+            <div class="evento">
+                <img src="imagen/quinceañera1.jpg" alt="Quinceañera 1">
+                <h3>Quinceañera</h3>
+                <p>Organizamos quinceañeras únicas y mágicas, cuidando cada detalle para que sea inolvidable.</p>
+            </div>
+            <div class="evento">
+                <img src="imagen/quinceañera2.webp" alt="Quinceañera 2">
+                <h3>Quinceañera</h3>
+                <p>Diseñamos eventos personalizados para quinceañeras, llenos de diversión y estilo.</p>
+            </div>
+
+
+            <!-- Bodas -->
+            <div class="evento">
+                <img src="imagen/boda1.jpeg" alt="Boda 1">
+                <h3>Boda</h3>
+                <p>Hacemos que cada boda sea especial, con planificación profesional y detalles memorables.</p>
+            </div>
+            <div class="evento">
+                <img src="imagen/boda2.jpg" alt="Boda 2">
+                <h3>Boda</h3>
+                <p>Planeamos bodas románticas y únicas, cuidando que cada momento sea mágico.</p>
+            </div>
+
+
+            <!-- Baby Shower -->
+            <div class="evento">
+                <img src="imagen/baby1.jpg" alt="Baby Shower 1">
+                <h3>Baby Shower</h3>
+                <p>Celebramos la llegada de tu bebé con eventos llenos de amor y alegría.</p>
+            </div>
+            <div class="evento">
+                <img src="imagen/baby2.jpg" alt="Baby Shower 2">
+                <h3>Baby Shower</h3>
+                <p>Organizamos baby showers personalizados, con detalles especiales y diversión asegurada.</p>
+            </div>
+        </div>
+    </section>
+<section class="contacto" id="contacto">
+    <h2>Contacto</h2>
+    <p>Escríbenos y nos pondremos en contacto contigo lo antes posible.</p>
+    <form class="contact-form" id="contact-form" action="#" method="post">
+        <input type="text" name="nombre" placeholder="Nombre" required>
+        <input type="email" name="email" placeholder="Correo electrónico" required>
+        <textarea name="mensaje" placeholder="Tu mensaje" rows="5" required></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+    <div id="mensaje-envio" class="mensaje-envio"></div>
+</section>
+
+
+<script>
+const form = document.getElementById("contact-form");
+const mensajeEnvio = document.getElementById("mensaje-envio");
+
+
+form.addEventListener("submit", function(e){
+    e.preventDefault(); // Evita que la página se recargue
+    mensajeEnvio.textContent = "¡Mensaje enviado correctamente!";
+    mensajeEnvio.classList.add("show"); // Aparece el mensaje
+    form.reset(); // Limpia los campos
+
+
+    // Desaparece después de 3 segundos
+    setTimeout(() => {
+        mensajeEnvio.classList.remove("show");
+    }, 3000);
+});
+</script>
+
+
+<!-- Testimonios -->
+<section class="testimonios" id="testimonios">
+    <h2>Testimonios</h2>
+    <p>Lo que nuestros clientes dicen sobre Open Magic Events</p>
+
+
+    <div class="testimonios-container">
+        <!-- Testimonio individual -->
+        <div class="testimonio">
+            <p>"¡Mi boda fue increíble! Todo estuvo perfecto gracias a Open Magic Events."</p>
+            <h4>Josué Navas <span>01/10/2025</span></h4>
+        </div>
+
+
+        <div class="testimonio">
+            <p>"La quinceañera de mi hija fue mágica, los detalles fueron maravillosos."</p>
+            <h4>Carla López <span>15/11/2025</span></h4>
+        </div>
+
+
+        <div class="testimonio">
+            <p>"El baby shower fue muy especial, todos quedaron encantados."</p>
+            <h4>Pedro Lemus <span>20/11/2025</span></h4>
+        </div>
+    </div>
+</section>
+
+
+<!-- Redes Sociales -->
+<section class="redes">
+    <h2>Síguenos en nuestras redes</h2>
+    <div class="redes-container">
+        <a href="https://www.instagram.com/openmagicevents_" target="_blank" class="red">
+            <img src="imagen/instagram.png" alt="Instagram">
+        </a>
+        <a href="https://wa.me/50361066493" target="_blank" class="red">
+            <img src="imagen/whatsapp.png" alt="WhatsApp">
+        </a>
+    </div>
+</section>
+<!-- Footer -->
+<footer class="footer">
+    <p>© 2025 Open Magic Events. Todos los derechos reservados.</p>
+</footer>
+</body>
