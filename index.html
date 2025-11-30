@@ -36,14 +36,22 @@
 
     <!-- Script para el menú -->
     <script>
-        const menuBtn = document.getElementById("menu-btn");
-        const nav = document.getElementById("nav");
+const menuBtn = document.getElementById("menu-btn");
+const nav = document.getElementById("nav");
 
+menuBtn.addEventListener("click", () => {
+    nav.classList.toggle("active");
+});
 
-        menuBtn.addEventListener("click", () => {
-            nav.classList.toggle("active");
-        });
-    </script>
+// cerrar el menú al hacer clic en un enlace
+const navLinks = document.querySelectorAll("#nav a");
+
+navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        nav.classList.remove("active");
+    });
+});
+</script>
 
 
     <section class="banner" id="Inicio">
