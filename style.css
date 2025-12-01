@@ -20,12 +20,30 @@ header {
     height: 100px;            /* altura del header */
 }
 
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+}
+
+body {
+    padding-top: 120px; /* evita que el banner baje detrás del header */
+}
+
+@media (max-width: 768px) {
+    nav {
+        top: 100px; /* menú debajo del header fijo */
+    }
+}
+
+
 /* contenedor interno del header para logo y nav */
 .header-container {
     height: 100px;
     display: flex;
     align-items: center;
-    gap: 60px;              /* espacio entre elementos */
      justify-content: space-between; /* esto empuja logo a la izquierda y nav a la derecha */
     padding: 0 20px; /* espacio lateral */
 }
@@ -416,6 +434,58 @@ img {
         flex-direction: column;
         align-items: center;
     }
+}
+
+
+/* sección de fidelización */
+.fidelizacion-section {
+    background: #fff7fe;
+    padding: 40px 20px;
+    margin: 40px auto;
+    max-width: 900px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.fidelizacion-section h2 {
+    text-align: center;
+    color: #b236d0;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.fidelizacion-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.fidelizacion-section ul,
+.fidelizacion-section ol {
+    margin: 20px auto;
+    max-width: 750px;
+    font-size: 18px;
+}
+
+.fidelizacion-section li {
+    margin-bottom: 10px;
+}
+
+.btn-fidelizacion {
+    display: block;
+    width: max-content;
+    margin: 25px auto 0;
+    padding: 12px 25px;
+    background: #b236d0;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.btn-fidelizacion:hover {
+    background: #8f22a8;
 }
 
 
